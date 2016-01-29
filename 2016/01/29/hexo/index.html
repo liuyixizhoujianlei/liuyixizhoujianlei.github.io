@@ -12,9 +12,9 @@
     
     <meta name="author" content="刘意希">
     
-    <meta name="description" content="Angularjs 指令详解! ####可以利用指令来扩展HTML标签，增加声明式语法来实现想做的任何事，可以对应用有特殊意义的元素和属性来替换一般的HTML标签
- 内置指令有三种:渲染指令,事件指令,节点指令
- 渲染指令有:ng-init            ng-bind           ">
+    <meta name="description" content="Angularjs 指令详解! 可以利用指令来扩展HTML标签，增加声明式语法来实现想做的任何事，可以对应用有特殊意义的元素和属性来替换一般的HTML标签
+内置指令有三种:渲染指令,事件指令,节点指令 渲染指令有:    ng-init
+    ng-bind    ng-repeat($index">
     
     
     
@@ -83,8 +83,8 @@
       <a href="http://yoursite.com" title="刘意希">刘意希</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-29T06:40:43.349Z" itemprop="datePublished">2016-01-29</time>
-    Updated:<time datetime="2016-01-29T06:40:43.346Z" itemprop="dateModified">2016-01-29</time>
+    <time datetime="2016-01-29T06:47:37.758Z" itemprop="datePublished">2016-01-29</time>
+    Updated:<time datetime="2016-01-29T06:47:37.754Z" itemprop="dateModified">2016-01-29</time>
     
   </p>
 </header>
@@ -93,14 +93,25 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">内置指令有三种:渲染指令,事件指令,节点指令</span></a></li></ol></li></ol>
 		</div>
 		
-		<h1 id="Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><a href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21" class="headerlink" title="Angularjs 指令详解!"></a> Angularjs 指令详解!</h1><p> ####可以利用指令来扩展HTML标签，增加声明式语法来实现想做的任何事，可以对应用有特殊意义的元素和属性来替换一般的HTML标签</p>
-<p> 内置指令有三种:渲染指令,事件指令,节点指令</p>
-<p> 渲染指令有:ng-init<br>            ng-bind<br>            ng-repeat<br>            ($index 当前索引,$first 是否为头元素,$middle 是否为非头非尾元素,$last 是否为尾元素)<br>            ng-include<br>            ng-bind-template</p>
-<p> 事件指令有:ng-change<br>            ng-click<br>            ng-dblclick<br>            ng-mousedown<br>            ng-mouseenter<br>            ng-mouseleave<br>            ng-mousemove<br>            ng-mouseover<br>            ng-mouseup<br>            ng-submit</p>
-<p> 节点指令有:ng-style<br>            ng-class<br>            ng-class-even<br>            ng-class-odd<br>            ng-show<br>            ng-hide<br>            ng-switch<br>            ng-src<br>            ng-href<br>            ng-if</p>
+		<h1 id="Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><a href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21" class="headerlink" title="Angularjs 指令详解!"></a> Angularjs 指令详解!</h1><p> 可以利用指令来扩展HTML标签，增加声明式语法来实现想做的任何事，可以对应用有特殊意义的元素和属性来替换一般的HTML标签</p>
+<h2 id="u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><a href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4" class="headerlink" title="内置指令有三种:渲染指令,事件指令,节点指令"></a>内置指令有三种:渲染指令,事件指令,节点指令</h2><p> <strong>渲染指令有:</strong><br>    <em>ng-init
+    </em>ng-bind<br>    <em>ng-repeat($index 当前索引,$first 是否为头元素,$middle 是否为非头非尾元素,$last 是否为尾元素)
+    </em>ng-include<br>    *ng-bind-template</p>
+<p> <strong>事件指令有:</strong><br>    <em>ng-change
+    </em>ng-click<br>    <em>ng-dblclick
+    </em>ng-mousedown<br>    <em>ng-mouseenter
+    </em>ng-mouseleave<br>    <em>ng-mousemove
+    </em>ng-mouseover<br>    <em>ng-mouseup
+    </em>ng-submit</p>
+<p> <strong>节点指令有:</strong><br>    <em>ng-style
+    </em>ng-class<br>    <em>ng-class-even
+    </em>ng-class-odd<br>    <em>ng-show 
+    </em>ng-hide<br>    <em>ng-switch
+    </em>ng-src<br>    <em>ng-href
+    </em>ng-if</p>
 <p>虽然内置指令非常丰富,但是在工作中,我们需求千奇八怪,需要自定义指令来实现更加变态的功能</p>
   
 	</div>
@@ -144,7 +155,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">内置指令有三种:渲染指令,事件指令,节点指令</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
