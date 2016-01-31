@@ -86,8 +86,8 @@ ng-repeat($index 当前索引,$fi">
       <a href="http://yoursite.com" title="刘意希">刘意希</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-31T06:13:59.610Z" itemprop="datePublished">2016-01-31</time>
-    Updated:<time datetime="2016-01-31T06:13:59.607Z" itemprop="dateModified">2016-01-31</time>
+    <time datetime="2016-01-31T06:18:19.454Z" itemprop="datePublished">2016-01-31</time>
+    Updated:<time datetime="2016-01-31T06:18:19.450Z" itemprop="dateModified">2016-01-31</time>
     
   </p>
 </header>
@@ -204,20 +204,11 @@ ng-repeat($index 当前索引,$fi">
 <li><p>首先我们来分析一段代码：</p>
 </li>
 </ul>
-<pre><code>&lt;div ng-app=&quot;app&quot; ng-init=&quot;name= &apos;祖父&apos;&quot;&gt;
-     &lt;div ng-init=&quot;name=&apos;父亲&apos;&quot;&gt;
-         第一代：
-         &lt;div ng-init=&quot;name= &apos;儿子&apos;&quot; ng-controller=&quot;SomeController&quot;&gt;
-             第二代： 
-             &lt;div ng-init=&quot;name=&apos;孙子&apos;&quot;&gt;
-                 第三代： 
-             &lt;/div&gt;
-         &lt;/div&gt;
-     &lt;/div&gt;
- &lt;/div&gt; 
-</code></pre><p>我们发现第一代，我们初始化name为父亲,但是第二代和第三代其实是一个作用域，那么他们的name其实是一个对象，因此出现的效果如下：</p>
+<div ng-app="app" ng-init="name= '祖父'"><br>    <div ng-init="name='父亲'"><br>        第一代：<br>        <div ng-init="name= '儿子'" ng-controller="SomeController"><br>            第二代： <br>            <div ng-init="name='孙子'"><br>                第三代： <br>            </div><br>        </div><br>    </div><br></div> 
+
+<p>我们发现第一代，我们初始化name为父亲,但是第二代和第三代其实是一个作用域，那么他们的name其实是一个对象，因此出现的效果如下：</p>
 <p>第一代：父亲<br>第二代： 孙子<br>第三代： 孙子<br>我们在修改一下代码，把第三代隔离开来再看看效果：</p>
- <div ng-app="app" ng-init="name= '祖父'"><br>            <div ng-init="name='父亲'"><br>                第一代：<br>                <div ng-init="name= '儿子'" ng-controller="SomeController"><br>                    第二代： <br>                    <div ng-init="name='孙子'" ng-controller="SecondController"><br>                        第三代： <br>                    </div><br>                </div><br>            </div><br>        </div>
+<div ng-app="app" ng-init="name= '祖父'"><br>    <div ng-init="name='父亲'"><br>        第一代：<br>        <div ng-init="name= '儿子'" ng-controller="SomeController"><br>            第二代： <br>            <div ng-init="name='孙子'" ng-controller="SecondController"><br>                第三代： <br>            </div><br>        </div><br>    </div><br></div>
 
 <p>JsCode:</p>
 <p> angular.module(‘app’, [])<br>.controller(‘SomeController’,function($scope) {</p>
@@ -225,33 +216,12 @@ ng-repeat($index 当前索引,$fi">
 <p> }) </p>
 <p>效果如下：</p>
 <p>第一代：父亲<br>第二代： 儿子<br>第三代： 孙子<br>在修改下代码来看看继承：</p>
-<pre><code>&lt;div ng-app=&quot;app&quot;ng-init=&quot;name= &apos;祖父的吻&apos;&quot;&gt;
-     &lt;div&gt;
-         第一代：
-         &lt;div ng-controller=&quot;SomeController&quot;&gt;
-             第二代： 
-             &lt;div  ng-controller=&quot;SecondController&quot;&gt;
-                 第三代： 
-             &lt;/div&gt;
-         &lt;/div&gt;
-     &lt;/div&gt;
- &lt;/div&gt; 
-</code></pre><p>效果如下：</p>
-<p>第一代：祖父的吻<br>第二代： 祖父的吻<br>第三代： 祖父的吻<br>如果要创建一个能够从外部原型继承作用域的指令，将scope属性设置为true，简单来说就是可继承的隔离，即不能反向影响父作用域。</p>
-<p> 再来看个例子：</p>
-<pre><code>angular.module(&apos;myApp&apos;, [])
-    .controller(&apos;MainController&apos;, function ($scope) {
-    })
-    .directive(&apos;myDirective&apos;, function () {
-        return {
-            restrict: &apos;A&apos;,
-            scope:false,//切换为{}，true测试
-            priority: 100,
-            template: &apos;&lt;div&gt;内部:&lt;input ng-model=&quot;myProperty&quot;/&gt;&lt;/div&gt;&apos;
-        };
-    });
-</code></pre><p>Html代码：</p>
-<p> <div ng-controller="MainController" ng-init="myProperty='Hello World!'"><br>        外部: <br>        <input ng-model="myProperty"><br>        <div my-directive=""></div><br>    </div><br> 当我们改变scope的值我们会发现</p>
+<div ng-app="app" ng-init="name= '祖父的吻'"><br>    <div><br>        第一代：<br>        <div ng-controller="SomeController"><br>            第二代： <br>            <div ng-controller="SecondController"><br>                第三代： <br>            </div><br>        </div><br>    </div><br></div> 
+
+
+
+<p>效果如下：</p>
+<p>第一代：祖父的吻<br>第二代： 祖父的吻<br>第三代： 祖父的吻<br>如果要创建一个能够从外部原型继承作用域的指令，将scope属性设置为true，简单来说就是可继承的隔离，即不能反向影响父作用域。<br>当我们改变scope的值我们会发现</p>
 <p>false:继承但不隔离</p>
 <p>true:继承并隔离</p>
 <p>{}：隔离且不继承 </p>
