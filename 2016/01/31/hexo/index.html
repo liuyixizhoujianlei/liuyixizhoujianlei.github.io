@@ -86,8 +86,8 @@ ng-repeat($index 当前索引,$fi">
       <a href="http://yoursite.com" title="刘意希">刘意希</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-31T06:02:59.978Z" itemprop="datePublished">2016-01-31</time>
-    Updated:<time datetime="2016-01-31T06:02:59.973Z" itemprop="dateModified">2016-01-31</time>
+    <time datetime="2016-01-31T06:11:03.123Z" itemprop="datePublished">2016-01-31</time>
+    Updated:<time datetime="2016-01-31T06:11:03.117Z" itemprop="dateModified">2016-01-31</time>
     
   </p>
 </header>
@@ -140,7 +140,35 @@ ng-repeat($index 当前索引,$fi">
 <h2 id="Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4"><a href="#Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4" class="headerlink" title="Angularjs自定义指令"></a>Angularjs自定义指令</h2><p>虽然内置指令非常丰富,但是在工作中,我们需求千奇百怪,这个时候就需要自定义指令来满足我们的需求.<br>对于指令,可以把它简单的理解成在特定DOM元素上运行的函数,指令可以扩展这个元素的功能.</p>
 <hr>
 <p><em> 首先来看个完整的参数实例再来详细的介绍各个参数的作用及用法 </em></p>
-<p>html:<br>angular.module(‘myApp’, [])<br>.directive(‘directiveName’, function() {<br>        return {<br>                restrict: String,<br>                priority: Number,<br>                terminal: Boolean,<br>                template: String or Template Function:<br>                function(tElement, tAttrs) {…},<br>                templateUrl: String,<br>                replace: Boolean or String,<br>                scope: Boolean or Object,<br>                transclude: Boolean,<br>                controller: String or<br>                function(scope, element, attrs, transclude, otherInjectables) { … },<br>                controllerAs: String,<br>                require: String,<br>                link: function(scope, iElement, iAttrs) { … },<br>                compile: // 返回一个对象或连接函数，如下所示：<br>                function(tElement, tAttrs, transclude) {<br>                    return {<br>                        pre: function(scope, iElement, iAttrs, controller) { … },<br>                        post: function(scope, iElement, iAttrs, controller) { … }<br>                       }<br>                    return function postLink(…) { … }<br>                }<br>        };<br>});</p>
+<p>html:<br>angular.module(‘myApp’, [])<br>.directive(‘directiveName’, function() {</p>
+<pre><code>return { 
+
+        restrict: String, 
+        priority: Number, 
+        terminal: Boolean, 
+        template: String or Template Function: 
+        function(tElement, tAttrs) {...}, 
+        templateUrl: String, 
+        replace: Boolean or String, 
+        scope: Boolean or Object, 
+        transclude: Boolean, 
+        controller: String or 
+        function(scope, element, attrs, transclude, otherInjectables) { ... }, 
+        controllerAs: String, 
+        require: String, 
+        link: function(scope, iElement, iAttrs) { ... }, 
+        compile: // 返回一个对象或连接函数，如下所示：
+        function(tElement, tAttrs, transclude) { 
+
+            return { 
+
+                pre: function(scope, iElement, iAttrs, controller) { ... }, 
+                post: function(scope, iElement, iAttrs, controller) { ... } 
+            } 
+            return function postLink(...) { ... } 
+        } 
+};
+</code></pre><p>});</p>
 <h3 id="u4E0B_u9762_u6765_u770B_u770B_u5404_u4E2A_u53C2_u6570_u7684_u7528_u6CD5"><a href="#u4E0B_u9762_u6765_u770B_u770B_u5404_u4E2A_u53C2_u6570_u7684_u7528_u6CD5" class="headerlink" title="下面来看看各个参数的用法"></a>下面来看看各个参数的用法</h3><ul>
 <li><p>restrict [string]<br>  restrict是一个可选的参数.用于指定该指令在DOM中以何种形式被声明.默认值是A,即以属性的形式来进行声明。<br>  E（元素）<br>  A（属性，默认值）<br>  C（类名）<br>  M（注释)</p>
 </li>
