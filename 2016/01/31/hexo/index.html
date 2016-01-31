@@ -79,15 +79,15 @@ ng-repeat($index 当前索引,$fi">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/30/hexo/" title="" itemprop="url"></a>
+      <a href="/2016/01/31/hexo/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="刘意希">刘意希</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-30T06:45:16.161Z" itemprop="datePublished">2016-01-30</time>
-    Updated:<time datetime="2016-01-30T06:45:16.157Z" itemprop="dateModified">2016-01-30</time>
+    <time datetime="2016-01-31T05:39:02.439Z" itemprop="datePublished">2016-01-31</time>
+    Updated:<time datetime="2016-01-31T05:39:02.435Z" itemprop="dateModified">2016-01-31</time>
     
   </p>
 </header>
@@ -140,7 +140,16 @@ ng-repeat($index 当前索引,$fi">
 <h2 id="Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4"><a href="#Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4" class="headerlink" title="Angularjs自定义指令"></a>Angularjs自定义指令</h2><p>虽然内置指令非常丰富,但是在工作中,我们需求千奇百怪,这个时候就需要自定义指令来满足我们的需求.<br>对于指令,可以把它简单的理解成在特定DOM元素上运行的函数,指令可以扩展这个元素的功能.</p>
 <hr>
 <p><em> 首先来看个完整的参数实例再来详细的介绍各个参数的作用及用法 </em></p>
-<p>angular.module(‘myApp’, [])<br>.directive(‘directiveName’, function() {<br>    return {<br>        restrict: String,<br>        priority: Number,<br>        terminal: Boolean,<br>        template: String or Template Function:<br>        function(tElement, tAttrs) {…},<br>        templateUrl: String,<br>        replace: Boolean or String,<br>        scope: Boolean or Object,<br>        transclude: Boolean,<br>        controller: String or<br>        function(scope, element, attrs, transclude, otherInjectables) { … },<br>        controllerAs: String,<br>        require: String,<br>        link: function(scope, iElement, iAttrs) { … },<br>        compile: // 返回一个对象或连接函数，如下所示：<br>        function(tElement, tAttrs, transclude) {<br>            return {<br>                pre: function(scope, iElement, iAttrs, controller) { … },<br>                post: function(scope, iElement, iAttrs, controller) { … }<br>               }<br>            return function postLink(…) { … }<br>        }<br>    };<br>});</p>
+<p>html:<br>angular.module(‘myApp’, [])<br>.directive(‘directiveName’, function() {</p>
+<ul>
+<li>return {<br>   restrict: String,<br>   priority: Number,<br>   terminal: Boolean,<br>   template: String or Template Function:<br>   function(tElement, tAttrs) {…},<br>   templateUrl: String,<br>   replace: Boolean or String,<br>   scope: Boolean or Object,<br>   transclude: Boolean,<br>   controller: String or<br>   function(scope, element, attrs, transclude, otherInjectables) { … },<br>   controllerAs: String,<br>   require: String,<br>   link: function(scope, iElement, iAttrs) { … },<br>   compile: // 返回一个对象或连接函数，如下所示：<br>   function(tElement, tAttrs, transclude) { <pre><code>return { 
+    pre: function(scope, iElement, iAttrs, controller) { ... }, 
+    post: function(scope, iElement, iAttrs, controller) { ... } 
+   } 
+return function postLink(...) { ... } 
+</code></pre>   } </li>
+<li>};<br>});</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -150,7 +159,7 @@ ng-repeat($index 当前索引,$fi">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/01/30/hexo/" data-title="刘意希" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/01/31/hexo/" data-title="刘意希" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
