@@ -86,8 +86,8 @@ ng-repeat($index 当前索引,$fi">
       <a href="http://yoursite.com" title="刘意希">刘意希</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-31T05:41:06.623Z" itemprop="datePublished">2016-01-31</time>
-    Updated:<time datetime="2016-01-31T05:41:06.617Z" itemprop="dateModified">2016-01-31</time>
+    <time datetime="2016-01-31T06:02:59.978Z" itemprop="datePublished">2016-01-31</time>
+    Updated:<time datetime="2016-01-31T06:02:59.973Z" itemprop="dateModified">2016-01-31</time>
     
   </p>
 </header>
@@ -96,7 +96,7 @@ ng-repeat($index 当前索引,$fi">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">内置指令有三种:渲染指令,事件指令,节点指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4"><span class="toc-number">1.2.</span> <span class="toc-text">Angularjs自定义指令</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">内置指令有三种:渲染指令,事件指令,节点指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4"><span class="toc-number">1.2.</span> <span class="toc-text">Angularjs自定义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E0B_u9762_u6765_u770B_u770B_u5404_u4E2A_u53C2_u6570_u7684_u7528_u6CD5"><span class="toc-number">1.2.1.</span> <span class="toc-text">下面来看看各个参数的用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scope__5Bbool_or_object_5D"><span class="toc-number">1.3.</span> <span class="toc-text">scope [bool or object]</span></a></li></ol></li></ol>
 		</div>
 		
 		<h1 id="Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><a href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21" class="headerlink" title="Angularjs 指令详解!"></a> Angularjs 指令详解!</h1><p> 可以利用指令来扩展HTML标签，增加声明式语法来实现想做的任何事，可以对应用有特殊意义的元素和属性来替换一般的HTML标签</p>
@@ -141,6 +141,94 @@ ng-repeat($index 当前索引,$fi">
 <hr>
 <p><em> 首先来看个完整的参数实例再来详细的介绍各个参数的作用及用法 </em></p>
 <p>html:<br>angular.module(‘myApp’, [])<br>.directive(‘directiveName’, function() {<br>        return {<br>                restrict: String,<br>                priority: Number,<br>                terminal: Boolean,<br>                template: String or Template Function:<br>                function(tElement, tAttrs) {…},<br>                templateUrl: String,<br>                replace: Boolean or String,<br>                scope: Boolean or Object,<br>                transclude: Boolean,<br>                controller: String or<br>                function(scope, element, attrs, transclude, otherInjectables) { … },<br>                controllerAs: String,<br>                require: String,<br>                link: function(scope, iElement, iAttrs) { … },<br>                compile: // 返回一个对象或连接函数，如下所示：<br>                function(tElement, tAttrs, transclude) {<br>                    return {<br>                        pre: function(scope, iElement, iAttrs, controller) { … },<br>                        post: function(scope, iElement, iAttrs, controller) { … }<br>                       }<br>                    return function postLink(…) { … }<br>                }<br>        };<br>});</p>
+<h3 id="u4E0B_u9762_u6765_u770B_u770B_u5404_u4E2A_u53C2_u6570_u7684_u7528_u6CD5"><a href="#u4E0B_u9762_u6765_u770B_u770B_u5404_u4E2A_u53C2_u6570_u7684_u7528_u6CD5" class="headerlink" title="下面来看看各个参数的用法"></a>下面来看看各个参数的用法</h3><ul>
+<li><p>restrict [string]<br>  restrict是一个可选的参数.用于指定该指令在DOM中以何种形式被声明.默认值是A,即以属性的形式来进行声明。<br>  E（元素）<br>  A（属性，默认值）<br>  C（类名）<br>  M（注释)</p>
+</li>
+<li><p>priority [number]</p>
+<p>  大多数指令会忽略这个参数，使用默认值0，但也有些场景设置高优先级是非常重要甚至是必须的。例如，ngRepeat将这个参数设置为1000，这样就可以保证在同一元素上，它总是在其他指令之前被调用。</p>
+</li>
+<li><p>terminal [bool]</p>
+<p>  这个参数用来停止运行当前元素上比本指令优先级低的指令。但同当前指令优先级相同的指令还是会被执行。<br>  例如：ngIf的优先级略高于ngView（它们操控的实际就是terminal参数），如果ngIf的表达式值为true，ngView就可以被正常执行，但如果ngIf表达式的值为false，由于ngView的优先级较低就不会被执行</p>
+</li>
+<li><p>template [string or function]<br>  template 参数是可选的,必须被设置为以下两种形式其中之一</p>
+<p>  1.一段HTML文本；<br>  2.一个可以接受两个参数的函数，参数为tElement和tAttrs，并返回一个代表模板的字符串。<br>  下列是参数为函数的示例代码:<br>  angular.module(‘app’,[])</p>
+<p>  .directive(‘myDirective’, function () {</p>
+<pre><code>    return { 
+        restrict: &apos;EAC&apos;, 
+        template: function (elem, attr) {
+            return &quot;&lt;a href=&apos;&quot; + attr.value + &quot;&apos;&gt;&quot; + attr.text + &quot;&lt;/a&gt;&quot;;
+        }
+};
+</code></pre><p>  })</p>
+</li>
+<li><p>templateUrl[string or function]</p>
+<p>  templateUrl是可选的参数,可以是两种类型:</p>
+<p>  一个代表外部HTML文件路径的字符串；<br>  一个可以接受两个参数的函数，参数为tElement和tAttrs，并返回一个外部HTML文件路径的字符串</p>
+</li>
+<li><p>replace [bool]</p>
+<p>  replace 是一个可选的参数,如果设置了这个参数，值必须为true，因为默认值为false。默认值意味着模板会被当作子元素插入到调用此指令的元素内部.</p>
+</li>
+</ul>
+<hr>
+<p><em>介绍完基本的指令参数后,就要涉及到更重要的作用域参数了</em></p>
+<h2 id="scope__5Bbool_or_object_5D"><a href="#scope__5Bbool_or_object_5D" class="headerlink" title="scope [bool or object]"></a>scope [bool or object]</h2><ul>
+<li><p>scope参数是可选的,可以被设置为true或一个对象.默认是false.</p>
+<p>  如果一个元素上有多个指令使用了隔离作用域，其中只有一个可以生效。只有指令模板中的根元素可以获得一个新的作用域。因此，对于这些对象来说scope默认被设置为true。内置指令ng-controller的作用，就是从父级作用域继承并创建一个新的子作用域。它会创建一个新的从父作用域继承而来的子作用域。这里的继承就不在赘述，和面向对象中的继承基本是一直的。</p>
+</li>
+<li><p>首先我们来分析一段代码：</p>
+</li>
+</ul>
+<pre><code>&lt;div ng-app=&quot;app&quot; ng-init=&quot;name= &apos;祖父&apos;&quot;&gt;
+     &lt;div ng-init=&quot;name=&apos;父亲&apos;&quot;&gt;
+         第一代：
+         &lt;div ng-init=&quot;name= &apos;儿子&apos;&quot; ng-controller=&quot;SomeController&quot;&gt;
+             第二代： 
+             &lt;div ng-init=&quot;name=&apos;孙子&apos;&quot;&gt;
+                 第三代： 
+             &lt;/div&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/div&gt; 
+</code></pre><p>我们发现第一代，我们初始化name为父亲,但是第二代和第三代其实是一个作用域，那么他们的name其实是一个对象，因此出现的效果如下：</p>
+<p>第一代：父亲<br>第二代： 孙子<br>第三代： 孙子<br>我们在修改一下代码，把第三代隔离开来再看看效果：</p>
+ <div ng-app="app" ng-init="name= '祖父'"><br>            <div ng-init="name='父亲'"><br>                第一代：<br>                <div ng-init="name= '儿子'" ng-controller="SomeController"><br>                    第二代： <br>                    <div ng-init="name='孙子'" ng-controller="SecondController"><br>                        第三代： <br>                    </div><br>                </div><br>            </div><br>        </div>
+
+<p>JsCode:</p>
+<p> angular.module(‘app’, [])<br>.controller(‘SomeController’,function($scope) {</p>
+<p>})<br>.controller(‘SecondController’, function ($scope) {</p>
+<p> }) </p>
+<p>效果如下：</p>
+<p>第一代：父亲<br>第二代： 儿子<br>第三代： 孙子<br>在修改下代码来看看继承：</p>
+<pre><code>&lt;div ng-app=&quot;app&quot;ng-init=&quot;name= &apos;祖父的吻&apos;&quot;&gt;
+     &lt;div&gt;
+         第一代：
+         &lt;div ng-controller=&quot;SomeController&quot;&gt;
+             第二代： 
+             &lt;div  ng-controller=&quot;SecondController&quot;&gt;
+                 第三代： 
+             &lt;/div&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/div&gt; 
+</code></pre><p>效果如下：</p>
+<p>第一代：祖父的吻<br>第二代： 祖父的吻<br>第三代： 祖父的吻<br>如果要创建一个能够从外部原型继承作用域的指令，将scope属性设置为true，简单来说就是可继承的隔离，即不能反向影响父作用域。</p>
+<p> 再来看个例子：</p>
+<pre><code>angular.module(&apos;myApp&apos;, [])
+    .controller(&apos;MainController&apos;, function ($scope) {
+    })
+    .directive(&apos;myDirective&apos;, function () {
+        return {
+            restrict: &apos;A&apos;,
+            scope:false,//切换为{}，true测试
+            priority: 100,
+            template: &apos;&lt;div&gt;内部:&lt;input ng-model=&quot;myProperty&quot;/&gt;&lt;/div&gt;&apos;
+        };
+    });
+</code></pre><p>Html代码：</p>
+<p> <div ng-controller="MainController" ng-init="myProperty='Hello World!'"><br>        外部: <br>        <input ng-model="myProperty"><br>        <div my-directive=""></div><br>    </div><br> 当我们改变scope的值我们会发现</p>
+<p>false:继承但不隔离</p>
+<p>true:继承并隔离</p>
+<p>{}：隔离且不继承 </p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -183,7 +271,7 @@ ng-repeat($index 当前索引,$fi">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">内置指令有三种:渲染指令,事件指令,节点指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4"><span class="toc-number">1.2.</span> <span class="toc-text">Angularjs自定义指令</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Angularjs__u6307_u4EE4_u8BE6_u89E3_21"><span class="toc-number">1.</span> <span class="toc-text"> Angularjs 指令详解!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5185_u7F6E_u6307_u4EE4_u6709_u4E09_u79CD_3A_u6E32_u67D3_u6307_u4EE4_2C_u4E8B_u4EF6_u6307_u4EE4_2C_u8282_u70B9_u6307_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">内置指令有三种:渲染指令,事件指令,节点指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Angularjs_u81EA_u5B9A_u4E49_u6307_u4EE4"><span class="toc-number">1.2.</span> <span class="toc-text">Angularjs自定义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E0B_u9762_u6765_u770B_u770B_u5404_u4E2A_u53C2_u6570_u7684_u7528_u6CD5"><span class="toc-number">1.2.1.</span> <span class="toc-text">下面来看看各个参数的用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scope__5Bbool_or_object_5D"><span class="toc-number">1.3.</span> <span class="toc-text">scope [bool or object]</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
