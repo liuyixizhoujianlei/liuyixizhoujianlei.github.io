@@ -79,15 +79,15 @@ ng-repeat($index 当前索引,$first 是否为头元素,$mid">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/31/Angularjs/" title="Angularjs 指令参数!" itemprop="url">Angularjs 指令参数!</a>
+      <a href="/2016/02/01/Angularjs/" title="Angularjs 指令参数!" itemprop="url">Angularjs 指令参数!</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://blog.csdn.net/liu_yi_xi" title="刘意希">刘意希</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-01-31T06:39:13.427Z" itemprop="datePublished">2016-01-31</time>
-    Updated:<time datetime="2016-01-31T06:39:13.424Z" itemprop="dateModified">2016-01-31</time>
+    <time datetime="2016-02-01T07:35:03.790Z" itemprop="datePublished">2016-02-01</time>
+    Updated:<time datetime="2016-02-01T07:35:03.784Z" itemprop="dateModified">2016-02-01</time>
     
   </p>
 </header>
@@ -198,7 +198,8 @@ ng-repeat($index 当前索引,$first 是否为头元素,$mid">
 </li>
 <li><p>controller[string or function]<br> controller参数可以是一个字符串或一个函数。当设置为字符串时，会以字符串的值为名字，来查找注册在应用中的控制器的构造函数.</p>
 </li>
-<li>controllerAs[string]<br>  controllerAs参数用来设置控制器的别名，这样就可以在视图中引用控制器甚至无需注入$scope。<br>require[string or string[]]<br>   require为字符串代表另外一个指令的名字。require会将控制器注入到其所指定的指令中，并作为当前指令的链接函数的第四个参数。字符串或数组元素的值是会在当前指令的作用域中使用的指令名称。在任何情况下，ng编译器在查找子控制器时都会参考当前指令的模板。<br>   1.如果不使用^前缀，指令只会在自身的元素上查找控制器。指令定义只会查找定义在指令作当前用域中的ng-model=””<br>  2.如果使用?前缀,在当前指令中没有找到所需要的控制器，会将null作为传给link函数的第四个参数。<br>  3.如果添加了^前缀，指令会在上游的指令链中查找require参数所指定的控制器。<br>  4.如果添加了?^ 将前面两个选项的行为组合起来，我们可选择地加载需要的指令并在父指令链中进行查找<br>  5.如果没有任何前缀，指令将会在自身所提供的控制器中进行查找，如果没有找到任何控制器（或具有指定名字的指令）就抛出一个错误</li>
+<li>controllerAs[string]<br>  controllerAs参数用来设置控制器的别名，这样就可以在视图中引用控制器甚至无需注入$scope。</li>
+<li>require[string or string[]]<br>   require为字符串代表另外一个指令的名字。require会将控制器注入到其所指定的指令中，并作为当前指令的链接函数的第四个参数。字符串或数组元素的值是会在当前指令的作用域中使用的指令名称。在任何情况下，ng编译器在查找子控制器时都会参考当前指令的模板。<br>   1.如果不使用^前缀，指令只会在自身的元素上查找控制器。指令定义只会查找定义在指令作当前用域中的ng-model=””<br>  2.如果使用?前缀,在当前指令中没有找到所需要的控制器，会将null作为传给link函数的第四个参数。<br>  3.如果添加了^前缀，指令会在上游的指令链中查找require参数所指定的控制器。<br>  4.如果添加了?^ 将前面两个选项的行为组合起来，我们可选择地加载需要的指令并在父指令链中进行查找<br>  5.如果没有任何前缀，指令将会在自身所提供的控制器中进行查找，如果没有找到任何控制器（或具有指定名字的指令）就抛出一个错误</li>
 <li><p>compile[function]<br>  compile选项本身并不会被频繁使用，但是link函数则会被经常使用。本质上，当我们设置了link选项，实际上是创建了一个postLink() 链接函数，以便compile() 函数可以定义链接函数。通常情况下，如果设置了compile函数，说明我们希望在指令和实时数据被放到DOM中之前进行DOM操作，在这个函数中进行诸如添加和删除节点等DOM操作是安全的。</p>
 <p>  compile和link选项是互斥的。如果同时设置了这两个选项，那么会把compile所返回的函数当作链接函数，而link选项本身则会被忽略。</p>
 <p>  编译函数负责对模板DOM进行转换。链接函数负责将作用域和DOM进行链接。 在作用域同DOM链接之前可以手动操作DOM。在实践中，编写自定义指令时这种操作是非常罕见的，但有几个内置指令提供了这样的功能。</p>
@@ -274,7 +275,7 @@ ng-repeat($index 当前索引,$first 是否为头元素,$mid">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://blog.csdn.net/liu_yi_xi/2016/01/31/Angularjs/" data-title="Angularjs 指令参数! | 刘意希" data-tsina="null" class="share clearfix">
+  <div data-url="http://blog.csdn.net/liu_yi_xi/2016/02/01/Angularjs/" data-title="Angularjs 指令参数! | 刘意希" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
